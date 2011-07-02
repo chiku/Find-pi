@@ -10,7 +10,7 @@ Mathematically it boils down to
 
 <pre>or [(3/4) * π (r ^ 2)] / [r ^ 2] = k</pre>
 
-<pre>where k = number of points inside quarter circle / number of points inside square (k is found by experiment)<pre>
+<pre>where k = number of points inside quarter circle / number of points inside square (k is found by experiment)</pre>
 
 <pre>or (3/4) π = k</pre>
 
