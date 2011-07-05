@@ -33,14 +33,14 @@ class ApproxPiFinder
     (approx_pi - Math::PI) * 100 / Math::PI
   end
 
-  def output
+  def output_to_console
     $stdout.puts "Approx pi : #{approx_pi}"
     $stdout.puts "Actual pi : #{Math::PI}"
     $stdout.puts "Error     : #{error}%"
   end
 
   private
-  
+
   def random_numbers
     1.upto(sample_size).map { rand * RADIUS }
   end
@@ -61,7 +61,7 @@ class ApproxPiReporter
 
     @best_pi,   @lowest_error  = approx_pi, error if error.abs < lowest_error.abs
     @worst_pi,  @highest_error = approx_pi, error if error.abs > highest_error.abs
-    @sum_of_pis                = sum_of_pis + approx_pi  
+    @sum_of_pis                = sum_of_pis + approx_pi
   end
 
   def repeat_generates
@@ -73,15 +73,22 @@ class ApproxPiReporter
 
   def output
     repeat_generates
-    display_to_console
+    output_to_console
+    output_to_files
   end
 
-  def display_to_console
+  def output_to_console
     $stdout.puts "\nFor sample size of #{sample_size}"
     $stdout.puts "Best PI  : #{best_pi} (error = #{lowest_error}%)"
     $stdout.puts "Worst PI : #{worst_pi} (error = #{highest_error}%)"
     $stdout.puts "Avg. PI  : #{average_pi} (error = #{average_error}%)"
     $stdout.flush
+  end
+
+  def output_to_files
+    write_to_file "ruby.average.csv", average_error
+    write_to_file "ruby.best.csv", lowest_error
+    write_to_file "ruby.worst.csv", highest_error
   end
 
   def average_pi
@@ -99,10 +106,15 @@ class ApproxPiReporter
 
     [approx_pi, error]
   end
+
+  def write_to_file(file_name, property)
+    File.open(file_name, "a+") do |f|
+      f.puts "#{sample_size},#{'%.4f' % property}\n"
+    end
+  end
 end
 
 SAMPLE_SIZES = [1, 10, 100, 1_000, 10_000, 100_000]
-
 SAMPLE_SIZES.each do |size|
   ApproxPiReporter.new(size).output
 end
