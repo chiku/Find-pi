@@ -30,9 +30,5 @@ Select a sample size of run and the algorithm for a thousand times. Increase the
 
 Currently only the default random number generator in Ruby is presented. More languages to follow.
 
-The sample size and the *average* error are tabulated
-
-| Language  | 1       | 10      | 100     | 1,000   | 10,000  | 100,000 |
-| --------- | -------:| -------:| -------:| -------:| -------:| -------:|
-| Ruby      | 3.3611% | 0.5345% | 0.1530% | 0.0501% | 0.0024% | 0.0071% |
+The sample size and the [*average*](https://github.com/chiku/Find-pi/blob/master/output/average.markdown), [*best*](https://github.com/chiku/Find-pi/blob/master/output/best.markdown) and [*worst*](https://github.com/chiku/Find-pi/blob/master/output/worst.markdown) errors are tabulated.
 
