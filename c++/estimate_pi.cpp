@@ -158,9 +158,9 @@ private:
 
     void outputToFiles()
     {
-        writeToFile("c++.average.csv", averageError());
-        writeToFile("c++.best.csv", lowest_error);
-        writeToFile("c++.worst.csv", highest_error);
+        writeToFile("output/c++.average.csv", averageError());
+        writeToFile("output/c++.best.csv", lowest_error);
+        writeToFile("output/c++.worst.csv", highest_error);
     }
 
     void writeToFile(const char file_name[], double value)

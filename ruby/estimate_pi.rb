@@ -30,7 +30,7 @@ class ApproxPiFinder
   end
 
   def error
-    (approx_pi - Math::PI) * 100 / Math::PI
+    (approx_pi - Math::PI) * 100.0 / Math::PI
   end
 
   def output_to_console
@@ -78,7 +78,8 @@ class ApproxPiReporter
   end
 
   def output_to_console
-    $stdout.puts "\nFor sample size of #{sample_size}"
+    $stdout.puts "\n"
+    $stdout.puts "For sample size of #{sample_size}"
     $stdout.puts "Best PI  : #{best_pi} (error = #{lowest_error}%)"
     $stdout.puts "Worst PI : #{worst_pi} (error = #{highest_error}%)"
     $stdout.puts "Avg. PI  : #{average_pi} (error = #{average_error}%)"
@@ -86,9 +87,9 @@ class ApproxPiReporter
   end
 
   def output_to_files
-    write_to_file "ruby.average.csv", average_error
-    write_to_file "ruby.best.csv", lowest_error
-    write_to_file "ruby.worst.csv", highest_error
+    write_to_file "output/ruby.average.csv", average_error
+    write_to_file "output/ruby.best.csv", lowest_error
+    write_to_file "output/ruby.worst.csv", highest_error
   end
 
   def average_pi
@@ -96,7 +97,7 @@ class ApproxPiReporter
   end
 
   def average_error
-    (average_pi - Math::PI) * 100 / Math::PI
+    (average_pi - Math::PI) * 100.0 / Math::PI
   end
 
   def analyze
@@ -118,3 +119,4 @@ SAMPLE_SIZES = [1, 10, 100, 1_000, 10_000, 100_000]
 SAMPLE_SIZES.each do |size|
   ApproxPiReporter.new(size).output
 end
+
