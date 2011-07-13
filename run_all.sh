@@ -15,7 +15,7 @@ echo ""
 
 echo "****** C++ ******"
 cd c++
-g++ estimate_pi.cpp -o estimate_pi
+g++ -I. *.cc -o estimate_pi
 ./estimate_pi | tee output/run.txt
 cd ..
 echo "****** C++ ******"
