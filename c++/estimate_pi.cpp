@@ -6,7 +6,6 @@
 #include <cstdlib>
 #include <ctime>
 
-
 double actualPi()
 {
     return 4.0 * std::atan(1.0);
@@ -87,7 +86,6 @@ public:
         std::cout << "Actual pi  : " << actualPi() << std::endl;
         std::cout << "Error      : " << error() << "%" << std::endl;
     }
-
 };
 
 
@@ -120,7 +118,7 @@ private:
             lowest_error = error;
         }
 
-        if (std::abs(error) > std::abs(lowest_error))
+        if (std::abs(error) > std::abs(highest_error))
         {
             worst_pi = approx_pi;
             highest_error = error;
@@ -188,6 +186,7 @@ public:
         outputToFiles();
     }
 };
+
 
 int main()
 {
