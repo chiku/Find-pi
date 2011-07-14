@@ -41,9 +41,9 @@ class ApproxPiReporter
   end
 
   def output_to_files
-    write_to_file "output/ruby.average.csv", average_error
-    write_to_file "output/ruby.best.csv", lowest_error
-    write_to_file "output/ruby.worst.csv", highest_error
+    write_to_file "../output/ruby.average.csv", average_error
+    write_to_file "../output/ruby.best.csv", lowest_error
+    write_to_file "../output/ruby.worst.csv", highest_error
   end
 
   def average_pi

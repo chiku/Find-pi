@@ -5,7 +5,7 @@ require 'csv'
 collection = {}
 SAMPLE_SIZE = [1, 10, 100, 1_000, 10_000, 100_000].map(&:to_s)
 
-Dir.glob('**/*.csv').each do |file|
+Dir.glob('output/*.csv').each do |file|
   language, category, extension = file.split "."
   language = File.basename(language).capitalize
   collection[category] ||= {}
