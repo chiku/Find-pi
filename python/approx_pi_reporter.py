@@ -54,5 +54,5 @@ class ApproxPiReporter:
 
   def write_to_file(self, file_name, property):
     with open(file_name, mode='a+', encoding='utf-8') as file:
-      file.write("{0},{1:.4}\n".format(self.sample_size, property))
+      file.write("{0},{1:.4f}\n".format(self.sample_size, property))
 
