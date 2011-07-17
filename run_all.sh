@@ -20,4 +20,14 @@ g++ -I. *.cc -o estimate_pi
 cd ..
 echo "****** C++ ******"
 
+echo ""
+echo ""
+
+echo "****** PYTHON ******"
+cd python
+./estimate_pi.py | tee ../output/python.txt
+cd ..
+echo "****** PYTHON ******"
+
 ./create_markdown.rb
+
