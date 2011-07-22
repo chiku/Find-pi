@@ -8,7 +8,7 @@
 
 const int EstimatePi::ApproxPiReporter::REPEATS() const
 {
-    return 10;
+    return 1000;
 }
 
 void EstimatePi::ApproxPiReporter::generate()
