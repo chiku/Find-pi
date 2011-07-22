@@ -1,9 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include <cstdlib>
-
 #include <utils.h>
+#include <point.h>
 #include <approx_pi_finder.h>
 
 const double EstimatePi::ApproxPiFinder::RADIUS() const
@@ -11,22 +10,16 @@ const double EstimatePi::ApproxPiFinder::RADIUS() const
     return 1000.0;
 }
 
-void EstimatePi::ApproxPiFinder::assignXs()
+void EstimatePi::ApproxPiFinder::assignPoints()
 {
-    for(std::vector<double>::iterator it = xs.begin(); it != xs.end(); ++it)
-        *it = ((double)std::rand()/(double)RAND_MAX) * RADIUS();
-}
-
-void EstimatePi::ApproxPiFinder::assignYs()
-{
-    for(std::vector<double>::iterator it = ys.begin(); it != ys.end(); ++it)
-        *it = ((double)std::rand()/(double)RAND_MAX) * RADIUS();
+    for(std::vector<Point>::iterator it = points.begin(); it != points.end(); ++it)
+        *it = Point(randomTill(RADIUS()), randomTill(RADIUS()));
 }
 
 void EstimatePi::ApproxPiFinder::findDistances()
 {
     for(std::vector<double>::size_type i = 0; i != distances.size(); i++)
-        distances[i] = std::sqrt(xs[i] * xs[i] + ys[i] * ys[i]);
+        distances[i] = points[i].distance();
 }
 
 int EstimatePi::ApproxPiFinder::totalPointsInsideCircle() const
@@ -41,8 +34,7 @@ int EstimatePi::ApproxPiFinder::totalPointsInsideCircle() const
 EstimatePi::ApproxPiFinder::ApproxPiFinder(int _sample_size)
 {
     sample_size = _sample_size;
-    xs = std::vector<double>(sample_size);
-    ys = std::vector<double>(sample_size);
+    points = std::vector<Point>(sample_size);
     distances = std::vector<double>(sample_size);
 }
 
@@ -58,8 +50,7 @@ double EstimatePi::ApproxPiFinder::error() const
 
 void EstimatePi::ApproxPiFinder::evaluate()
 {
-    assignXs();
-    assignYs();
+    assignPoints();
     findDistances();
 }
 

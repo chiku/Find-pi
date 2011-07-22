@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <ctime>
 
 #include <approx_pi_reporter.h>

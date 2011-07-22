@@ -3,7 +3,8 @@
 
 namespace EstimatePi
 {
-    double actualPi();
+    const double actualPi();
+    const double randomTill(double limit);
 }
 
 #endif
