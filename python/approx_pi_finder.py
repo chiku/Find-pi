@@ -1,6 +1,8 @@
 import random
 import math
 
+import point
+
 class ApproxPiFinder:
   RADIUS = 1000.0
 
@@ -9,13 +11,10 @@ class ApproxPiFinder:
     self.cached_inside_circle = None
 
   def distances(self):
-    return [math.sqrt(x*x + y*y) for x,y in zip(self.xs(), self.ys())]
+    return [point.distance() for point in self.points()]
 
-  def xs(self):
-    return self.random_numbers()
-
-  def ys(self):
-    return self.random_numbers()
+  def points(self):
+    return [point.Point(random.uniform(0.0, self.RADIUS), random.uniform(0.0, self.RADIUS)) for i in range(self.sample_size)]
 
   def inside_circle(self):
     if self.cached_inside_circle != None: return self.cached_inside_circle
@@ -32,7 +31,4 @@ class ApproxPiFinder:
     print("Approx pi : ", self.approx_pi())
     print("Actual pi : ", math.pi)
     print("Error     : ", self.error(), "%")
-
-  def random_numbers(self):
-    return [random.uniform(0.0, self.RADIUS) for i in range(self.sample_size)]
 
