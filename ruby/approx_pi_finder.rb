@@ -1,22 +1,20 @@
+require File.dirname(__FILE__) + '/point'
+
 class ApproxPiFinder
   RADIUS = 1000.0
 
-  attr_reader :distances, :approx_pi, :sample_size
+  attr_reader :points, :sample_size
 
   def initialize(sample_size)
     @sample_size = sample_size
   end
 
   def distances
-    @distances ||= xs.zip(ys).map { |x, y| Math.sqrt(x * x + y * y) }
+    @distances ||= points.map { |point| point.distance }
   end
 
-  def xs
-    @xs ||= random_numbers
-  end
-
-  def ys
-    @ys ||= random_numbers
+  def points
+    @points ||= 1.upto(sample_size).map { Point.new(rand * RADIUS, rand * RADIUS) }
   end
 
   def inside_circle
@@ -35,12 +33,6 @@ class ApproxPiFinder
     $stdout.puts "Approx pi : #{approx_pi}"
     $stdout.puts "Actual pi : #{Math::PI}"
     $stdout.puts "Error     : #{error}%"
-  end
-
-  private
-
-  def random_numbers
-    1.upto(sample_size).map { rand * RADIUS }
   end
 end
 
