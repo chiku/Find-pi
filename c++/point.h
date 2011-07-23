@@ -12,7 +12,7 @@ namespace EstimatePi
     public:
         Point();
         Point(double _x, double _y);
-        const double distance();
+        const double distance() const;
     };
 }
 

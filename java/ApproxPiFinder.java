@@ -14,15 +14,10 @@ class ApproxPiFinder
             points.add(new Point(Utils.randomTill(RADIUS), Utils.randomTill(RADIUS)));
     }
 
-    private void findDistances() {
-        for(int i = 0; i < sampleSize; i++)
-            distances.add(points.get(i).distance());
-    }
-
     private int totalPointsInsideCircle() {
         int count = 0;
-        for(Double distance : distances)
-            if (distance < RADIUS)
+        for(Point point : points)
+            if (point.distance() < RADIUS)
                 count++;
         return count;
     }
@@ -43,7 +38,6 @@ class ApproxPiFinder
 
     public void evaluate() {
         assignPoints();
-        findDistances();
     }
 
     public void outputToConsole() {

@@ -16,17 +16,11 @@ void EstimatePi::ApproxPiFinder::assignPoints()
         *it = Point(randomTill(RADIUS()), randomTill(RADIUS()));
 }
 
-void EstimatePi::ApproxPiFinder::findDistances()
-{
-    for(std::vector<double>::size_type i = 0; i != distances.size(); i++)
-        distances[i] = points[i].distance();
-}
-
 int EstimatePi::ApproxPiFinder::totalPointsInsideCircle() const
 {
     int count = 0;
-    for(std::vector<double>::const_iterator it = distances.begin(); it != distances.end(); ++it)
-        if (*it < RADIUS())
+    for(std::vector<Point>::const_iterator it = points.begin(); it != points.end(); ++it)
+        if (it->distance() < RADIUS())
             count++;
     return count;
 }
@@ -51,7 +45,6 @@ double EstimatePi::ApproxPiFinder::error() const
 void EstimatePi::ApproxPiFinder::evaluate()
 {
     assignPoints();
-    findDistances();
 }
 
 void EstimatePi::ApproxPiFinder::outputToConsole() const

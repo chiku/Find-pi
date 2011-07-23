@@ -18,7 +18,6 @@ namespace EstimatePi
     private:
         const double RADIUS() const;
         void assignPoints();
-        void findDistances();
         int totalPointsInsideCircle() const;
 
     public:

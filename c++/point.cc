@@ -12,7 +12,7 @@ EstimatePi::Point::Point()
 {
 }
 
-const double EstimatePi::Point::distance()
+const double EstimatePi::Point::distance() const
 {
     return std::sqrt(x * x + y * y);
 }

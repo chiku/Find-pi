@@ -9,16 +9,12 @@ class ApproxPiFinder
     @sample_size = sample_size
   end
 
-  def distances
-    @distances ||= points.map { |point| point.distance }
-  end
-
   def points
     @points ||= 1.upto(sample_size).map { Point.new(rand * RADIUS, rand * RADIUS) }
   end
 
   def inside_circle
-    distances.count {|d| d < RADIUS}
+    points.count {|point| point.distance < RADIUS}
   end
 
   def approx_pi
