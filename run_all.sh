@@ -29,5 +29,15 @@ cd python
 cd ..
 echo "****** PYTHON ******"
 
+echo ""
+echo ""
+
+echo "****** JAVA ******"
+cd java
+javac *.java
+java EstimatePi | tee ../output/java.txt
+cd ..
+echo "****** JAVA ******"
+
 ./create_markdown.rb
 
