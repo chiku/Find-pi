@@ -24,7 +24,7 @@ void EstimatePi::ApproxPiReporter::generate()
         lowest_error = error;
     }
 
-    if (std::abs(error) > std::abs(highest_error))
+    if (std::abs(error) >= std::abs(highest_error))
     {
         worst_pi = approx_pi;
         highest_error = error;

@@ -11,8 +11,8 @@ class ApproxPiReporter:
 
   def generate(self):
     approx_pi, error = self.analyze()
-    if math.fabs(error) < math.fabs(self.lowest_error):  self.best_pi,   self.lowest_error  = approx_pi, error
-    if math.fabs(error) > math.fabs(self.highest_error): self.worst_pi,  self.highest_error = approx_pi, error
+    if math.fabs(error) <  math.fabs(self.lowest_error):  self.best_pi,   self.lowest_error  = approx_pi, error
+    if math.fabs(error) >= math.fabs(self.highest_error): self.worst_pi,  self.highest_error = approx_pi, error
     self.sum_of_pis = self.sum_of_pis + approx_pi
 
   def repeat_generates(self):

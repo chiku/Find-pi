@@ -25,7 +25,7 @@ class ApproxPiReporter
             lowestError = error;
         }
 
-        if (Math.abs(error) > Math.abs(highestError))
+        if (Math.abs(error) >= Math.abs(highestError))
         {
             worstPi = approxPi;
             highestError = error;
