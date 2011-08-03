@@ -1,13 +1,13 @@
 var Point = function(x, y) {
-  var x = x;
-  var y = y;
+  var x = x,
+      y = y;
 
-  var distance1 = function() {
+  var distance = function() {
     return Math.sqrt(x * x + y * y);
   }
 
   return {
-    distance: distance1
+    distance: distance
   }
 };
 

@@ -1,4 +1,4 @@
-var point = require('./point')
+var point = require('./point');
 
 var ApproxPiFinder = function(sampleSize) {
   var sampleSize = sampleSize;

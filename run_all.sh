@@ -53,7 +53,7 @@ echo ""
 
 echo "****** Javascript ******"
 cd javascript
-./estimate.pi.io | tee ../output/javascript.txt
+./estimate.pi.js | tee ../output/javascript.txt
 cd ..
 echo "****** Javascript ******"
 
