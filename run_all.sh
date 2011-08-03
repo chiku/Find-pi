@@ -39,5 +39,23 @@ java EstimatePi | tee ../output/java.txt
 cd ..
 echo "****** JAVA ******"
 
+echo ""
+echo ""
+
+echo "****** IO ******"
+cd io
+./EstimatePi.io | tee ../output/io.txt
+cd ..
+echo "****** IO ******"
+
+echo ""
+echo ""
+
+echo "****** Javascript ******"
+cd javascript
+./estimate.pi.io | tee ../output/javascript.txt
+cd ..
+echo "****** Javascript ******"
+
 ./create_markdown.rb
 
