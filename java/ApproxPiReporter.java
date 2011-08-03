@@ -19,7 +19,7 @@ class ApproxPiReporter
         double approxPi = finder.approxPi();
         double error = finder.error();
 
-        if (Math.abs(error) < Math.abs(lowestError))
+        if (Math.abs(error) <= Math.abs(lowestError))
         {
             bestPi = approxPi;
             lowestError = error;

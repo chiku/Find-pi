@@ -13,7 +13,7 @@ class ApproxPiReporter
   def generate
     approx_pi, error           = analyze
 
-    @best_pi,   @lowest_error  = approx_pi, error if error.abs <  lowest_error.abs
+    @best_pi,   @lowest_error  = approx_pi, error if error.abs <= lowest_error.abs
     @worst_pi,  @highest_error = approx_pi, error if error.abs >= highest_error.abs
     @sum_of_pis                = sum_of_pis + approx_pi
   end

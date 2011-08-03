@@ -14,13 +14,13 @@ ApproxPiReporter := clone do(
     approxPi := finder approxPi
     error    := finder error
 
-    if(error abs > highestError abs,
-      worstPi = approxPi
-      highestError = error
-    )
     if(error abs <= lowestError abs,
       bestPi = approxPi
       lowestError = error
+    )
+    if(error abs >= highestError abs,
+      worstPi = approxPi
+      highestError = error
     )
     sumOfPis = sumOfPis + approxPi
   )

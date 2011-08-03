@@ -18,7 +18,7 @@ void EstimatePi::ApproxPiReporter::generate()
     double approx_pi = finder.approxPi();
     double error     = finder.error();
 
-    if (std::abs(error) < std::abs(lowest_error))
+    if (std::abs(error) <= std::abs(lowest_error))
     {
         best_pi = approx_pi;
         lowest_error = error;
