@@ -48,6 +48,7 @@ ApproxPiReporter := clone do(
     "Best PI  : #{bestPi} (error = #{lowestError}%)" interpolate println
     "Worst PI : #{worstPi} (error = #{highestError}%)" interpolate println
     "Avg. PI  : #{averagePi} (error = #{averageError}%)" interpolate println
+    File clone standardOutput flush
   )
 
   outputToFiles := method(
