@@ -13,7 +13,6 @@ namespace EstimatePi
         int sample_size;
 
         std::vector<Point> points;
-        std::vector<double> distances;
 
     private:
         const double RADIUS() const;

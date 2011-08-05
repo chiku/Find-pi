@@ -29,7 +29,6 @@ EstimatePi::ApproxPiFinder::ApproxPiFinder(int _sample_size)
 {
     sample_size = _sample_size;
     points = std::vector<Point>(sample_size);
-    distances = std::vector<double>(sample_size);
 }
 
 double EstimatePi::ApproxPiFinder::approxPi() const

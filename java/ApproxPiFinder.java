@@ -7,7 +7,6 @@ class ApproxPiFinder
     private int sampleSize;
 
     private ArrayList<Point> points;
-    private ArrayList<Double> distances;
 
     private void assignPoints() {
         for (int i = 0; i < sampleSize; i++)
@@ -25,7 +24,6 @@ class ApproxPiFinder
     public ApproxPiFinder(int sampleSize) {
         this.sampleSize = sampleSize;
         this.points = new ArrayList<Point>(this.sampleSize);
-        this.distances = new ArrayList<Double>(this.sampleSize);
     }
 
     public double approxPi() {
