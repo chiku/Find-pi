@@ -43,7 +43,7 @@ void EstimatePi::ApproxPiReporter::repeatGenerates()
         generate();
 }
 
-void EstimatePi::ApproxPiReporter::outputToConsole()
+void EstimatePi::ApproxPiReporter::outputToConsole() const
 {
     std::cout << std::endl << "For sample size of " << sample_size;
     std::cout << std::endl << "Best PI  : " << best_pi     << "(error = " << lowest_error   << "%)";
@@ -62,14 +62,14 @@ double EstimatePi::ApproxPiReporter::averageError() const
     return (averagePi() - actualPi()) * 100.0 / actualPi();
 }
 
-void EstimatePi::ApproxPiReporter::outputToFiles()
+void EstimatePi::ApproxPiReporter::outputToFiles() const
 {
     writeToFile("../output/c++.average.csv", averageError());
     writeToFile("../output/c++.best.csv", lowest_error);
     writeToFile("../output/c++.worst.csv", highest_error);
 }
 
-void EstimatePi::ApproxPiReporter::writeToFile(const char file_name[], double value)
+void EstimatePi::ApproxPiReporter::writeToFile(const char file_name[], double value) const
 {
     std::ofstream f;
     f.open(file_name, std::ios::app);
