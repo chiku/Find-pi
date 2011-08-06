@@ -15,7 +15,7 @@ echo ""
 
 echo "****** C++ ******"
 cd c++
-g++ -I. *.cc -o estimate_pi
+g++ -02 -I. *.cc -o estimate_pi
 ./estimate_pi | tee ../output/c++.txt
 cd ..
 echo "****** C++ ******"
@@ -56,6 +56,16 @@ cd javascript
 ./estimate.pi.js | tee ../output/javascript.txt
 cd ..
 echo "****** Javascript ******"
+
+echo ""
+echo ""
+
+echo "****** C ******"
+cd c
+gcc -02 -I. -lm *.c -o estimate_pi
+./estimate_pi | tee ../output/c.txt
+cd ..
+echo "****** C ******"
 
 ./create_markdown.rb
 
