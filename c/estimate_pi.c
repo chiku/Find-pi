@@ -12,8 +12,8 @@ int main()
   for(i = 0; i < sizeof(SAMPLE_SIZES)/sizeof(int); i++)
   {
     ApproxPiReporter reporter = ApproxPiReporter_Initialize(SAMPLE_SIZES[i]);
-    ApproxPiReporter_Output(reporter);
-    ApproxPiReporter_Destroy(reporter);
+    ApproxPiReporter_Output(&reporter);
+    ApproxPiReporter_Destroy(&reporter);
   }
 }
 

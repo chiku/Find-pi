@@ -10,10 +10,10 @@ const int ApproxPiReporter_REPEATS = 1000;
 void ApproxPiReporter_Generate(ApproxPiReporter *self)
 {
   ApproxPiFinder finder = ApproxPiFinder_Initialize(self->sample_size);
-  ApproxPiFinder_Evaluate(finder);
-  double approx_pi = ApproxPiFinder_ApproxPi(finder);
-  double error = ApproxPiFinder_Error(finder);
-  ApproxPiFinder_Destroy(finder);
+  ApproxPiFinder_Evaluate(&finder);
+  double approx_pi = ApproxPiFinder_ApproxPi(&finder);
+  double error = ApproxPiFinder_Error(&finder);
+  ApproxPiFinder_Destroy(&finder);
 
   if (fabs(error) <= fabs(self->lowest_error))
   {
@@ -49,27 +49,27 @@ void ApproxPiReporter_RepeatGenerates(ApproxPiReporter *self)
   ApproxPiReporter_FindAverageError(self);
 }
 
-void ApproxPiReporter_OutputToConsole(const ApproxPiReporter self)
+void ApproxPiReporter_OutputToConsole(const ApproxPiReporter *self)
 {
-  printf("\n For sample size of %d", self.sample_size);
-  printf("\n Best PI  : %f(error = %f%%)", self.best_pi, self.lowest_error);
-  printf("\n Worst PI : %f(error = %f%%)", self.worst_pi, self.highest_error);
-  printf("\n Avg. PI  : %f(error = %f%%)", self.average_pi, self.average_error);
+  printf("\n For sample size of %d", self->sample_size);
+  printf("\n Best PI  : %f(error = %f%%)", self->best_pi, self->lowest_error);
+  printf("\n Worst PI : %f(error = %f%%)", self->worst_pi, self->highest_error);
+  printf("\n Avg. PI  : %f(error = %f%%)", self->average_pi, self->average_error);
   printf("\n");
 }
 
-void ApproxPiReporter_WriteToFile(const ApproxPiReporter self, const char file_name[], double value)
+void ApproxPiReporter_WriteToFile(const ApproxPiReporter *self, const char file_name[], double value)
 {
   FILE *fp = fopen(file_name, "a+");
-  fprintf(fp, "%d,%.4f\n", self.sample_size, value);
+  fprintf(fp, "%d,%.4f\n", self->sample_size, value);
   fclose(fp);
 }
 
-void ApproxPiReporter_OutputToFiles(const ApproxPiReporter self)
+void ApproxPiReporter_OutputToFiles(const ApproxPiReporter *self)
 {
-  ApproxPiReporter_WriteToFile(self, "../output/c.average.csv", self.average_error);
-  ApproxPiReporter_WriteToFile(self, "../output/c.best.csv", self.lowest_error);
-  ApproxPiReporter_WriteToFile(self, "../output/c.worst.csv", self.highest_error);
+  ApproxPiReporter_WriteToFile(self, "../output/c.average.csv", self->average_error);
+  ApproxPiReporter_WriteToFile(self, "../output/c.best.csv", self->lowest_error);
+  ApproxPiReporter_WriteToFile(self, "../output/c.worst.csv", self->highest_error);
 }
 
 ApproxPiReporter ApproxPiReporter_Initialize(int sample_size)
@@ -79,13 +79,13 @@ ApproxPiReporter ApproxPiReporter_Initialize(int sample_size)
   return self;
 }
 
-void ApproxPiReporter_Destroy(ApproxPiReporter self)
+void ApproxPiReporter_Destroy(ApproxPiReporter *self)
 {
 }
 
-void ApproxPiReporter_Output(ApproxPiReporter self)
+void ApproxPiReporter_Output(ApproxPiReporter *self)
 {
-  ApproxPiReporter_RepeatGenerates(&self);
+  ApproxPiReporter_RepeatGenerates(self);
   ApproxPiReporter_OutputToConsole(self);
   ApproxPiReporter_OutputToFiles(self);
 }

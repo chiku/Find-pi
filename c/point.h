@@ -10,9 +10,9 @@ struct Point
 };
 
 Point Point_Initialize(double x, double y);
-void Point_Destroy(Point self);
+void Point_Destroy(Point *self);
 
-const double Point_Distance(const Point self);
+const double Point_Distance(const Point *self);
 
 #endif
 

@@ -19,9 +19,9 @@ struct ApproxPiReporter
 };
 
 ApproxPiReporter ApproxPiReporter_Initialize(int sample_size);
-void ApproxPiReporter_Destroy(ApproxPiReporter self);
+void ApproxPiReporter_Destroy(ApproxPiReporter *self);
 
-void ApproxPiReporter_Output(ApproxPiReporter self);
+void ApproxPiReporter_Output(ApproxPiReporter *self);
 
 #endif
 
