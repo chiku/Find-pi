@@ -1,4 +1,5 @@
-var approxPiFinder = require('./approx.pi.finder.js'),
+var approxPiFinder = require('./approx.pi.finder'),
+    sprintf        = require('./sprintf-0.7-beta1'),
     fs             = require('fs'),
     util           = require('util');
 
@@ -62,8 +63,8 @@ var ApproxPiReporter = function(sampleSize) {
 
   var writeToFile = function(fileName, property) {
     fs.open(fileName, "a+", function(err, fd) {
-      //fs.write(fd, util.format("%d,%.4d\n", sampleSize, property)); <-- unstable build
-      fs.write(fd, sampleSize + "," + property + "\n");
+      fs.write(fd, sprintf.sprintf("%d,%.4f\n", sampleSize, property));
+      //fs.write(fd, sampleSize + "," + property + "\n");
       fs.close(fd);
     });
   };
