@@ -15,7 +15,7 @@ echo ""
 
 echo "****** C++ ******"
 cd c++
-g++ -02 -I. *.cc -o estimate_pi
+g++ -O2 -I. *.cc -o estimate_pi
 ./estimate_pi | tee ../output/c++.txt
 cd ..
 echo "****** C++ ******"
@@ -62,7 +62,7 @@ echo ""
 
 echo "****** C ******"
 cd c
-gcc -02 -I. -lm *.c -o estimate_pi
+gcc -O2 -I. -lm *.c -o estimate_pi
 ./estimate_pi | tee ../output/c.txt
 cd ..
 echo "****** C ******"
