@@ -4,6 +4,9 @@ rm -f output/*.markdown
 rm -f output/*.txt
 rm -f output/*.csv
 
+echo ""
+echo ""
+
 echo "****** RUBY ******"
 cd ruby
 ./estimate_pi.rb | tee ../output/ruby.txt
@@ -66,6 +69,18 @@ gcc -O2 -I. -lm *.c -o estimate_pi
 ./estimate_pi | tee ../output/c.txt
 cd ..
 echo "****** C ******"
+
+echo ""
+echo ""
+
+echo "****** Lua ******"
+cd lua
+./estimate_pi | tee ../output/lua.txt
+cd ..
+echo "****** Lua ******"
+
+echo ""
+echo ""
 
 ./create_markdown.rb
 
