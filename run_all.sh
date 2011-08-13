@@ -75,7 +75,7 @@ echo ""
 
 echo "****** Lua ******"
 cd lua
-./estimate_pi | tee ../output/lua.txt
+./estimate_pi.lua | tee ../output/lua.txt
 cd ..
 echo "****** Lua ******"
 
