@@ -52,9 +52,9 @@ void ApproxPiReporter_RepeatGenerates(ApproxPiReporter *self)
 void ApproxPiReporter_OutputToConsole(const ApproxPiReporter *self)
 {
   printf("\n For sample size of %d", self->sample_size);
-  printf("\n Best PI  : %f(error = %f%%)", self->best_pi, self->lowest_error);
-  printf("\n Worst PI : %f(error = %f%%)", self->worst_pi, self->highest_error);
-  printf("\n Avg. PI  : %f(error = %f%%)", self->average_pi, self->average_error);
+  printf("\n Best PI  : %f (error = %f%%)", self->best_pi, self->lowest_error);
+  printf("\n Worst PI : %f (error = %f%%)", self->worst_pi, self->highest_error);
+  printf("\n Avg. PI  : %f (error = %f%%)", self->average_pi, self->average_error);
   printf("\n");
 }
 

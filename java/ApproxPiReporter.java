@@ -46,9 +46,9 @@ class ApproxPiReporter
     private void outputToConsole() {
         System.out.println("\n");
         System.out.println("For sample size of " + sampleSize);
-        System.out.println("Best PI  : " + bestPi + "(error = " + lowestError + "%)");
-        System.out.println("Worst PI : " + worstPi + "(error = " + highestError + "%)");
-        System.out.println("Avg. PI  : " + averagePi() + "(error = " + averageError() + "%)");
+        System.out.println("Best PI  : " + bestPi + " (error = " + lowestError + "%)");
+        System.out.println("Worst PI : " + worstPi + " (error = " + highestError + "%)");
+        System.out.println("Avg. PI  : " + averagePi() + " (error = " + averageError() + "%)");
     }
 
     private double averagePi() {

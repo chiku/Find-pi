@@ -47,9 +47,9 @@ ApproxPiReporter = {
   outputToConsole = function(self)
     print("\n")
     print(string.format("For sample size of %d", self.sampleSize));
-    print(string.format("Best PI  : %f(error = %f%%)", self.bestPi, self.lowestError));
-    print(string.format("Worst PI : %f(error = %f%%)", self.worstPi, self.highestError));
-    print(string.format("Avg. PI  : %f(error = %f%%)", self.averagePi, self.averageError));
+    print(string.format("Best PI  : %f (error = %f%%)", self.bestPi, self.lowestError));
+    print(string.format("Worst PI : %f (error = %f%%)", self.worstPi, self.highestError));
+    print(string.format("Avg. PI  : %f (error = %f%%)", self.averagePi, self.averageError));
   end,
 
   outputToFiles = function(self)

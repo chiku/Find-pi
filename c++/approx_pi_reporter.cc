@@ -46,9 +46,9 @@ void EstimatePi::ApproxPiReporter::repeatGenerates()
 void EstimatePi::ApproxPiReporter::outputToConsole() const
 {
     std::cout << std::endl << "For sample size of " << sample_size;
-    std::cout << std::endl << "Best PI  : " << best_pi     << "(error = " << lowest_error   << "%)";
-    std::cout << std::endl << "Worst PI : " << worst_pi    << "(error = " << highest_error  << "%)";
-    std::cout << std::endl << "Avg. PI  : " << averagePi() << "(error = " << averageError() << "%)";
+    std::cout << std::endl << "Best PI  : " << best_pi     << " (error = " << lowest_error   << "%)";
+    std::cout << std::endl << "Worst PI : " << worst_pi    << " (error = " << highest_error  << "%)";
+    std::cout << std::endl << "Avg. PI  : " << averagePi() << " (error = " << averageError() << "%)";
     std::cout << std::endl;
 }
 

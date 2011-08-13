@@ -50,9 +50,9 @@ var ApproxPiReporter = function(sampleSize) {
   var outputToConsole = function() {
     console.log("\n")
     console.log("For sample size of " + sampleSize);
-    console.log("Best PI  : " + bestPi + "(error = " + lowestError + "%)");
-    console.log("Worst PI : " + worstPi + "(error = " + highestError + "%)");
-    console.log("Avg. PI  : " + averagePi + "(error = " + averageError +"%)");
+    console.log("Best PI  : " + bestPi + " (error = " + lowestError + "%)");
+    console.log("Worst PI : " + worstPi + " (error = " + highestError + "%)");
+    console.log("Avg. PI  : " + averagePi + " (error = " + averageError +"%)");
   };
 
   var outputToFiles = function() {
