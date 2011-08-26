@@ -1,6 +1,6 @@
 doFile("ApproxPiFinder.io")
 
-ApproxPiReporter := clone do(
+ApproxPiReporter := Object clone do(
   REPEATS := 1000
 
   withSampleSize := method(sampleSize,
