@@ -3,7 +3,6 @@ import java.util.ArrayList;
 class ApproxPiFinder
 {
     private static double RADIUS = 1000.0;
-    private double approxPi;
     private int sampleSize;
 
     private ArrayList<Point> points;

@@ -7,7 +7,6 @@ typedef struct ApproxPiFinder ApproxPiFinder;
 
 struct ApproxPiFinder
 {
-  double approx_pi;
   int sample_size;
   Point *points;
 };

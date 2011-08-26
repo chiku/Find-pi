@@ -9,7 +9,6 @@ namespace EstimatePi
 {
     class ApproxPiFinder
     {
-        double approx_pi;
         int sample_size;
 
         std::vector<Point> points;
