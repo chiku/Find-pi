@@ -82,5 +82,16 @@ echo "****** Lua ******"
 echo ""
 echo ""
 
+
+echo "****** BASIC ******"
+cd basic
+/opt/freebasic/fbc estimate-pi.bas
+./estimate-pi | tee ../output/basic.txt
+cd ..
+echo "****** BASIC ******"
+
+echo ""
+echo ""
+
 ./create_markdown.rb
 
