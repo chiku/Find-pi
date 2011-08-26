@@ -1,4 +1,4 @@
-#include once "approx-pi-reporter.bas"
+#include once "approx-pi-reporter.bi"
 
 Randomize
 

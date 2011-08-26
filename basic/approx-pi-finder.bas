@@ -1,23 +1,6 @@
-#include once "point.bas"
-#include once "utils.bas"
-
-Type ApproxPiFinder
-    Private:
-      RADIUS As Const Double = 1000.0
-      sampleSize As Integer
-      points As Point Ptr
-
-      Declare Sub assignPoints
-      Declare Function totalPointsInsideCircle As Integer
-
-    Public:
-      Declare Constructor(sampleSize As Integer)
-      Declare Destructor
-      Declare Function approxPi As Double
-      Declare Function error As Double
-      Declare Sub evaluate
-      Declare Sub outputToConsole
-End Type
+#include once "approx-pi-finder.bi"
+#include once "point.bi"
+#include once "utils.bi"
 
 Constructor ApproxPiFinder(sampleSize As Integer)
   This.sampleSize = sampleSize
