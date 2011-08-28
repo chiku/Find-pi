@@ -5,7 +5,6 @@ ApproxPiFinder := Object clone do(
 
   init := method(
     self points := List clone
-    self cachedInsideCircle := nil
   )
 
   withSampleSize := method(sampleSize,
@@ -22,8 +21,7 @@ ApproxPiFinder := Object clone do(
   )
 
   insideCircle := method(
-    if (cachedInsideCircle != nil, return cachedInsideCircle)
-    self cachedInsideCircle := points map(point, point distance) select(distance, distance < RADIUS) size
+    self insideCircle = points map(point, point distance) select(distance, distance < RADIUS) size
   )
 
   approxPi := method(
