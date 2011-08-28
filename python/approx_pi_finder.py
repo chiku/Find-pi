@@ -14,8 +14,8 @@ class ApproxPiFinder:
     return [point.Point(random.uniform(0.0, self.RADIUS), random.uniform(0.0, self.RADIUS)) for i in range(self.sample_size)]
 
   def inside_circle(self):
-    if self.cached_inside_circle != None: return self.cached_inside_circle
-    self.cached_inside_circle = sum(1 for point in self.points() if point.distance() < self.RADIUS)
+    if self.cached_inside_circle == None:
+      self.cached_inside_circle = sum(1 for point in self.points() if point.distance() < self.RADIUS)
     return self.cached_inside_circle
 
   def approx_pi(self):
