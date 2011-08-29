@@ -1,3 +1,4 @@
+use("extensions")
 use("approx_pi_finder")
 
 ApproxPiReporter = Origin mimic do(
@@ -66,11 +67,8 @@ ApproxPiReporter = Origin mimic do(
 
   writeToFile = method(fileName, property,
     FileSystem withOpenFile(fileName,
-      roundingOffKernel = (property asText + ".0000") split(".")
-      integer = roundingOffKernel first
-      decimal = (roundingOffKernel second + "0000") [0..3]
       fn(f,
-        f println("#{sampleSize},#{integer}.#{decimal}")
+        f println("#{sampleSize},#{property withDecimalsBeyondNDroppedAsText(4)}")
       )
     )
   )

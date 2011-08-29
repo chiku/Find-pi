@@ -1,3 +1,4 @@
+use("extensions")
 use("point")
 
 ApproxPiFinder = Origin mimic do(
@@ -34,7 +35,7 @@ ApproxPiFinder = Origin mimic do(
 
   outputToConsole = method(
     "Approx pi : #{approxPi}" println
-    "Actual pi : #{3.14}" println
+    "Actual pi : #{PI}" println
     "Error     : #{error} %" println
   )
 
