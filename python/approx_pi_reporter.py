@@ -53,6 +53,6 @@ class ApproxPiReporter:
     return [approx_pi, error]
 
   def write_to_file(self, file_name, property):
-    with open(file_name, mode='a+', encoding='utf-8') as file:
+    with open(file_name, mode='a+') as file:
       file.write("{0},{1:.4f}\n".format(self.sample_size, property))
 
