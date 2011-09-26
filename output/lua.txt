@@ -3,34 +3,34 @@
 For sample size of 1
 Best PI  : 4.000000 (error = 27.323954%)
 Worst PI : 0.000000 (error = -100.000000%)
-Avg. PI  : 3.216000 (error = 2.368459%)
+Avg. PI  : 3.204000 (error = 1.986488%)
 
 
 For sample size of 10
 Best PI  : 3.200000 (error = 1.859164%)
 Worst PI : 1.200000 (error = -61.802814%)
-Avg. PI  : 3.139600 (error = -0.063428%)
+Avg. PI  : 3.160800 (error = 0.611389%)
 
 
 For sample size of 100
 Best PI  : 3.160000 (error = 0.585924%)
 Worst PI : 2.560000 (error = -18.512669%)
-Avg. PI  : 3.152880 (error = 0.359287%)
+Avg. PI  : 3.136440 (error = -0.164014%)
 
 
 For sample size of 1000
 Best PI  : 3.140000 (error = -0.050696%)
-Worst PI : 2.976000 (error = -5.270978%)
-Avg. PI  : 3.141444 (error = -0.004732%)
+Worst PI : 2.988000 (error = -4.889006%)
+Avg. PI  : 3.141320 (error = -0.008679%)
 
 
 For sample size of 10000
 Best PI  : 3.141600 (error = 0.000234%)
-Worst PI : 3.093200 (error = -1.540386%)
-Avg. PI  : 3.141318 (error = -0.008742%)
+Worst PI : 3.192800 (error = 1.629980%)
+Avg. PI  : 3.141387 (error = -0.006553%)
 
 
 For sample size of 100000
 Best PI  : 3.141600 (error = 0.000234%)
-Worst PI : 3.160520 (error = 0.602476%)
-Avg. PI  : 3.141629 (error = 0.001149%)
+Worst PI : 3.124440 (error = -0.545986%)
+Avg. PI  : 3.141412 (error = -0.005743%)

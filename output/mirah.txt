@@ -1,0 +1,48 @@
+Parsing...
+  approx_pi_finder.mirah
+  approx_pi_reporter.mirah
+  estimate_pi.mirah
+  point.mirah
+Inferring types...
+Compiling...
+  approx_pi_finder.mirah
+  approx_pi_reporter.mirah
+  estimate_pi.mirah
+  point.mirah
+Done!
+
+
+For sample size of 1
+Best PI  : 4.0 (error = 27.323954473516274%)
+Worst PI : 0.0 (error = -100.0%)
+Avg. PI  : 3.052 (error = -2.851822736707082%)
+
+
+For sample size of 10
+Best PI  : 3.2 (error = 1.8591635788130245%)
+Worst PI : 1.2 (error = -61.80281365794512%)
+Avg. PI  : 3.1495999999999875 (error = 0.2548817524463166%)
+
+
+For sample size of 100
+Best PI  : 3.16 (error = 0.5859240340778606%)
+Worst PI : 3.68 (error = 17.138038115634977%)
+Avg. PI  : 3.1411999999999956 (error = -0.012498551947811966%)
+
+
+For sample size of 1000
+Best PI  : 3.14 (error = -0.050695738289721286%)
+Worst PI : 2.952 (error = -6.034921598544991%)
+Avg. PI  : 3.143891999999996 (error = 0.07319046941288304%)
+
+
+For sample size of 10000
+Best PI  : 3.1416 (error = 2.3384349967961742E-4%)
+Worst PI : 3.07 (error = -2.278864941576265%)
+Avg. PI  : 3.1421611999999945 (error = 0.018097394312142044%)
+
+
+For sample size of 100000
+Best PI  : 3.1416 (error = 2.3384349967961742E-4%)
+Worst PI : 3.11968 (error = -0.6975014270151947%)
+Avg. PI  : 3.1416043600000005 (error = 3.7262661007458355E-4%)

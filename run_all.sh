@@ -128,13 +128,13 @@ if [ -n "$IOKE" ] ; then
   display "Ioke"
 fi
 
-MIRAHC=`which mirah 2> /dev/null`
+MIRAHC=`which mirahc 2> /dev/null`
 JAVA=`which java 2> /dev/null`
 if [[ -n "$MIRAH" && -n "$JAVA" ]] ; then
   display "Mirah"
   echo "Using $MIRAH"
   cd mirah
-  GEM_HOME=$JVM_GEM_HOME $MIRAHC *.mirah | tee -a ../output/mirah.txt
+  GEM_HOME=$JRUBY_GEM_HOME $MIRAHC *.mirah | tee -a ../output/mirah.txt
   $JAVA EstimatePi | tee -a ../output/mirah.txt
   cd ..
   display "Mirah"
