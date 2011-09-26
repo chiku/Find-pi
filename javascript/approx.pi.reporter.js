@@ -64,7 +64,6 @@ var ApproxPiReporter = function(sampleSize) {
   var writeToFile = function(fileName, property) {
     fs.open(fileName, "a+", function(err, fd) {
       fs.write(fd, sprintf.sprintf("%d,%.4f\n", sampleSize, property));
-      //fs.write(fd, sampleSize + "," + property + "\n");
       fs.close(fd);
     });
   };

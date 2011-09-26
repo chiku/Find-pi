@@ -23,7 +23,7 @@ var ApproxPiFinder = function(sampleSize) {
 
   var error = (approxPi - Math.PI) * 100.0 / Math.PI;
 
-  outputToConsole = function() {
+  var outputToConsole = function() {
     console.log("Approx pi : " + approxPi);
     console.log("Actual pi : " + Math.PI);
     console.log("Error     : " + error + "%");
