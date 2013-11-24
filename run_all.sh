@@ -11,7 +11,7 @@ fi
 
 
 display() {
-  echo -e "\n\n****** $1 ******"
+  echo "\n\n****** $1 ******"
 }
 
 
@@ -61,7 +61,7 @@ if [[ -n "$JAVAC" && -n "$JAVA" ]] ; then
   $JAVAC *.java | tee -a ../output/java.txt
   $JAVA EstimatePi | tee -a ../output/java.txt
   cd ..
-  display "JAVA"
+  display "Java"
 fi
 
 IO=`which io 2> /dev/null`
@@ -140,7 +140,16 @@ if [[ -n "$MIRAH" && -n "$JAVA" ]] ; then
   display "Mirah"
 fi
 
-echo -e "\n\n"
+GROOVY=`which groovy 2> /dev/null`
+if [[ -n "$GROOVY" ]] ; then
+  display "Groovy"
+  echo "Using $GROOVY"
+  cd groovy
+  $GROOVY EstimatePi | tee -a ../output/groovy.txt
+  cd ..
+  display "Groovy"
+fi
+
+echo "\n\n"
 
 ./create_markdown.rb
-
