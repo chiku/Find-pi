@@ -150,6 +150,17 @@ if [[ -n "$GROOVY" ]] ; then
   display "Groovy"
 fi
 
+GO=`which go 2> /dev/null`
+if [[ -n "$GO" ]] ; then
+  display "Go"
+  echo "Using $GO"
+  cd go
+  $GO build -o EstimatePi *.go | tee -a ../output/go.txt
+  ./EstimatePi | tee -a ../output/go.txt
+  cd ..
+  display "Go"
+fi
+
 echo "\n\n"
 
 ./create_markdown.rb
