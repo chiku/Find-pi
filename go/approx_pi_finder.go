@@ -19,7 +19,7 @@ type ApproxPiFinder struct {
 	points     []Point
 }
 
-func NewApproxPiFinder(sampleSize int) ApproxPiFinder {
+func newApproxPiFinder(sampleSize int) ApproxPiFinder {
 	return ApproxPiFinder{
 		sampleSize: sampleSize,
 		points:     make([]Point, sampleSize),
@@ -30,14 +30,14 @@ func (finder *ApproxPiFinder) assignPoints() {
 	for i := 0; i < finder.sampleSize; i++ {
 		x := randomTill(radius)
 		y := randomTill(radius)
-		finder.points[i] = NewPoint(x, y)
+		finder.points[i] = newPoint(x, y)
 	}
 }
 
 func (finder *ApproxPiFinder) totalPointsInsideCircle() int {
 	count := 0
 	for _, point := range finder.points {
-		if point.Distance() < radius {
+		if point.distance() < radius {
 			count++
 		}
 	}

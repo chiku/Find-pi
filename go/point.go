@@ -7,10 +7,10 @@ type Point struct {
 	y float64
 }
 
-func NewPoint(X float64, Y float64) Point {
+func newPoint(X float64, Y float64) Point {
 	return Point{x: X, y: Y}
 }
 
-func (point Point) Distance() float64 {
+func (point Point) distance() float64 {
 	return math.Sqrt(point.x*point.x + point.y*point.y)
 }

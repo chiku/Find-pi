@@ -21,7 +21,7 @@ type ApproxPiReporter struct {
 	sumOfPis float64
 }
 
-func NewApproxPiReporter(sampleSize int) ApproxPiReporter {
+func newApproxPiReporter(sampleSize int) ApproxPiReporter {
 	return ApproxPiReporter{
 		sampleSize: sampleSize,
 		sumOfPis:   0.0,
@@ -29,7 +29,7 @@ func NewApproxPiReporter(sampleSize int) ApproxPiReporter {
 }
 
 func (reporter *ApproxPiReporter) generate() {
-	finder := NewApproxPiFinder(reporter.sampleSize)
+	finder := newApproxPiFinder(reporter.sampleSize)
 	finder.evaluate()
 	approxPi := finder.approxPi()
 	error := finder.error()
