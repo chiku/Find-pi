@@ -1,40 +1,42 @@
 var point = require('./point');
 
 var ApproxPiFinder = function(sampleSize) {
-  var sampleSize = sampleSize;
-  var RADIUS = 1000.0;
+    if (!(this instanceof ApproxPiFinder)) {
+        return new ApproxPiFinder(sampleSize);
+    }
 
-  var points = [];
-  for (var i = 0; i < sampleSize; i++) {
-    points[i] = point.Point(Math.random() * RADIUS, Math.random() * RADIUS);
-  }
+    var RADIUS = 1000.0,
+        points = [],
+        insideCircle = 0;
 
-  var insideCircle = (function() {
-    var sum = 0;
-    points.forEach(function(point) {
-      if (point.distance() < RADIUS) {
-        sum = sum + 1;
-      }
-    });
-    return sum;
-  })();
+    for (var i = 0; i < sampleSize; i++) {
+        points[i] = point.Point(Math.random() * RADIUS, Math.random() * RADIUS);
+    }
 
-  var approxPi = (4.0 * insideCircle) / sampleSize;
+    insideCircle = (function() {
+        var sum = 0;
+        points.forEach(function(point) {
+            if (point.distance() < RADIUS) {
+                sum += 1
+            }
+        });
+        return sum;
+    }());
 
-  var error = (approxPi - Math.PI) * 100.0 / Math.PI;
+    this.approxPi = (4.0 * insideCircle) / sampleSize;
+    this.error = (this.approxPi - Math.PI) * 100.0 / Math.PI;
+};
 
-  var outputToConsole = function() {
-    console.log("Approx pi : " + approxPi);
-    console.log("Actual pi : " + Math.PI);
-    console.log("Error     : " + error + "%");
-  };
+ApproxPiFinder.prototype = function() {
+    var outputToConsole = function() {
+        console.log("Approx pi : " + this.approxPi);
+        console.log("Actual pi : " + Math.PI);
+        console.log("Error         : " + this.error + "%");
+    };
 
-  return {
-    error: error,
-    approxPi: approxPi,
-    outputToConsole: outputToConsole
-  };
+    return {
+        outputToConsole: outputToConsole
+    };
 };
 
 exports.ApproxPiFinder = ApproxPiFinder;
-
