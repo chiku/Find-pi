@@ -2,11 +2,17 @@
 
 . ../common.sh
 
+IMPL="C++"
+OUTPUT="../output/c++.txt"
+
 CXX=`which g++ 2> /dev/null`
+
 if [ -n "$CXX" ] ; then
-  display "C++"
+  display $IMPL
   echo "Using $CXX"
-  $CXX -O2 -I. *.cc -o estimate_pi | tee -a ../output/c++.txt
-  ./estimate_pi | tee -a ../output/c++.txt
-  display "C++"
+  $CXX -O2 -I. *.cc -o estimate_pi | tee -a $OUTPUT
+  ./estimate_pi | tee -a $OUTPUT
+  display $IMPL
+else
+  skip $IMPL
 fi

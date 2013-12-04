@@ -2,6 +2,9 @@
 
 . ../common.sh
 
+IMPL="Lua"
+OUTPUT="../output/lua.txt"
+
 LUA=`which luajit2 2> /dev/null`
 if [ -z "$LUA" ] ; then
   LUA=`which luajit 2> /dev/null`
@@ -11,8 +14,10 @@ if [ -z "$LUA" ] ; then
 fi
 
 if [ -n "$LUA" ] ; then
-  display "Lua"
+  display $IMPL
   echo "Using $LUA"
-  $LUA estimate_pi.lua | tee -a ../output/lua.txt
-  display "Lua"
+  $LUA estimate_pi.lua | tee -a $OUTPUT
+  display $IMPL
+else
+  skip $IMPL
 fi

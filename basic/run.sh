@@ -2,14 +2,18 @@
 
 . ../common.sh
 
+IMPL="FreeBASIC"
+OUTPUT="../output/basic.txt"
+
 FBC=`which fbc 2> /dev/null`
+
 if [ -n "$FBC" ]
 then
-  display "FreeBASIC"
+  display $IMPL
   echo "Using $FBC"
-  $FBC -x estimate_pi *.bas | tee -a ../output/basic.txt
-  ./estimate_pi | tee -a ../output/basic.txt
-  display "FreeBASIC"
+  $FBC -x estimate_pi *.bas | tee -a $OUTPUT
+  ./estimate_pi | tee -a $OUTPUT
+  display $IMPL
 else
-  skip "FreeBASIC"
+  skip $IMPL
 fi

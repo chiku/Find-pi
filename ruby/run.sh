@@ -2,10 +2,16 @@
 
 . ../common.sh
 
+IMPL="Ruby"
+OUTPUT="../output/ruby.txt"
+
 RUBY=`which ruby 2> /dev/null`
+
 if [ -n "$RUBY" ] ; then
-  display "Ruby"
+  display $IMPL
   echo "Using $RUBY"
-  $RUBY estimate_pi.rb | tee -a ../output/ruby.txt
-  display "Ruby"
+  $RUBY estimate_pi.rb | tee -a $OUTPUT
+  display $IMPL
+else
+  skip $IMPL
 fi

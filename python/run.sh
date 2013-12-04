@@ -2,6 +2,9 @@
 
 . ../common.sh
 
+IMPL="Python"
+OUTPUT="../output/python.txt"
+
 PYTHON=`which pypy 2> /dev/null`
 if [ -z "$PYTHON" ] ; then
   PYTHON=`which python3 2> /dev/null`
@@ -14,8 +17,10 @@ if [ -z "$PYTHON" ] ; then
 fi
 
 if [ -n "$PYTHON" ] ; then
-  display "Python"
+  display $IMPL
   echo "Using $PYTHON"
-  $PYTHON estimate_pi.py | tee -a ../output/python.txt
-  display "Python"
+  $PYTHON estimate_pi.py | tee -a $OUTPUT
+  display $IMPL
+else
+  skip $IMPL
 fi
