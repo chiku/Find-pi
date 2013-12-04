@@ -1,3 +1,5 @@
+"use strict";
+
 var point = require('./point');
 
 var ApproxPiFinder = function(sampleSize) {

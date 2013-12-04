@@ -1,3 +1,5 @@
+"use strict";
+
 var approxPiFinder = require('./approx.pi.finder'),
     sprintf        = require('./sprintf-0.7-beta1'),
     fs             = require('fs'),
