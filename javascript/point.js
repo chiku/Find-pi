@@ -1,15 +1,20 @@
 var Point = function(x, y) {
-  var x = x,
-      y = y;
+    if (!(this instanceof Point)) {
+        return new Point(x, y);
+    }
 
-  var distance = function() {
-    return Math.sqrt(x * x + y * y);
-  }
-
-  return {
-    distance: distance
-  }
+    this.x = x;
+    this.y = y;
 };
 
-exports.Point = Point;
+Point.prototype = (function() {
+    var distance = function() {
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    };
 
+    return {
+        distance: distance
+    };
+}());
+
+exports.Point = Point;
