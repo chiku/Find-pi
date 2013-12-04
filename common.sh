@@ -15,7 +15,7 @@ skip() {
 
 try_language() {
   cd $1
-  ./run.sh
+  time ./run.sh
   cd ..
 }
 
