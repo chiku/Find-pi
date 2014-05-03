@@ -16,17 +16,17 @@ Mathematically it boils down to
 
 <pre>⇒ π = k * (4/3)</pre>
 
-Now if we have n number of points, the value of k is found by the following logic
+Now if we have ```n``` number of points, the value of ```k``` is found by the following logic
 
 The distance of a point from origin is <pre>d = sqrt(x' ^ 2 + y' ^ 2)</pre>
 
-_x' and y' denote randomly generated numbers_
+_```x'``` and ```y'``` denote randomly generated numbers_
 
 The point lies inside the circle if <pre>d < r</pre>
 
-So k turns out to be the count of points for which <pre>d < r</pre>
+So ```k``` turns out to be the count of points for which <pre>d < r</pre>
 
-This algorithm can be used to test the randomness of the random number generator methods / function available in different languages
+This algorithm can be used to test the randomness of the random number generator methods / function available in different languages.
 
 Select a sample size and run the simulation for a thousand times. Increase the sample size and observe how the error in π reduces.
 
