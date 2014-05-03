@@ -8,7 +8,7 @@ Mathematically it boils down to
    = number of points inside quarter circle / number of points inside square
 </pre>
 
-<pre>⇒ [(3/4) * π (r ^ 2)] / [r ^ 2] = k</pre>
+<pre>⇒ [(3/4) * πr² / r² = k</pre>
 
 <pre>where k = number of points inside quarter circle / number of points inside square (k is found by experiment)</pre>
 
@@ -18,7 +18,7 @@ Mathematically it boils down to
 
 Now if we have ```n``` number of points, the value of ```k``` is found by the following logic
 
-The distance of a point from origin is <pre>d = sqrt(x' ^ 2 + y' ^ 2)</pre>
+The distance of a point from origin is <pre>d = sqrt(x'² + y'²)</pre>
 
 _```x'``` and ```y'``` denote randomly generated numbers_
 
